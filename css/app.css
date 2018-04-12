@@ -5,12 +5,20 @@ html {
     font-size: 20px;
 }
 
+.container {
+    margin-right: 20px;
+}
+
+.cats {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* Cat list */
 .cats_list {
-    float: left;
+    flex-basis: 15%;
     padding: 20px 0 20px 40px;;
     margin-left: 20px;
-    width: 200px;
-    height: 80vh;
     list-style-type: none;
     color: #fff;
     background: #076279;
@@ -22,6 +30,11 @@ html {
     cursor: pointer;
 }
 
+/* Cat */
+#cats_main {
+    flex-basis: 80%;
+}
+
 .cats_current-cat {
     text-align: center;
     font-size: 2em;
@@ -31,4 +44,22 @@ html {
     max-width: 500px;
     height: auto;
     cursor: pointer;
+}
+
+/* Admin */
+.admin {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.admin_btn {
+    margin-bottom: 20px;
+}
+
+#admin_form {
+    display: none;
+}
+
+.admin_form input{
+    margin-right: 10px;
 }

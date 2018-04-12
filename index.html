@@ -12,12 +12,28 @@
 <body>
     <div class="container">
         <article id="cats" class="cats">
+            <!-- Cat list -->
             <ul id="cats_list" class="cats_list"></ul>
-            <div id="cats_current-cat" class="cats_current-cat">
-                <p id="cat_name"></p>
-                <img id="cat_img" class="cat_img">
-                <p id="cat_click-counter"></p>
-            </div>
+            
+            <section id="cats_main">
+                <!-- Current cat -->
+                <div id="cats_current-cat" class="cats_current-cat">
+                    <p id="cat_name"></p>
+                    <img id="cat_img" class="cat_img">
+                    <p id="cat_click-counter"></p>
+                </div>
+                <!-- Admin field -->
+                <section id="admin" class="admin">
+                    <button id="admin_btn" class="admin_btn">Admin</button>
+                    <form id="admin_form" class="admin_form">
+                        <label>Name: <input type="text"></label><br>
+                        <label>ImgURL: <input type="text"></label><br>
+                        <label>Clicks: <input type="text"></label><br>
+                        <button type="button">Cancel</button>
+                        <button type="submit">Submit</button>
+                    </form>
+                </section>
+            </section>
         </article>
     </div>
 
