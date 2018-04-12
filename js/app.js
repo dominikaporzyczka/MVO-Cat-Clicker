@@ -7,4 +7,14 @@
             { name: 'Purr', imgSrc: 'img/cat3.jpg', clickCount: 0 },
         ]
     }
+
+    const octopus = {
+        getCats: function () {
+            return model.cats;
+        },
+
+        init: {
+
+        }
+    }
 })();
