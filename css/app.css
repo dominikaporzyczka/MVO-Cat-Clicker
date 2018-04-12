@@ -1,0 +1,34 @@
+body,
+html {
+    padding: 0;
+    margin: 0;
+    font-size: 20px;
+}
+
+.cats_list {
+    float: left;
+    padding: 20px 0 20px 40px;;
+    margin-left: 20px;
+    width: 200px;
+    height: 80vh;
+    list-style-type: none;
+    color: #fff;
+    background: #076279;
+    border-radius: 10px;
+}
+
+.cats_list li {
+    padding: 10px 0;
+    cursor: pointer;
+}
+
+.cats_current-cat {
+    text-align: center;
+    font-size: 2em;
+}
+
+.cat_img {
+    max-width: 500px;
+    height: auto;
+    cursor: pointer;
+}
