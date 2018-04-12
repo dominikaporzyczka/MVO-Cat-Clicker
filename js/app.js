@@ -14,14 +14,49 @@
             return model.cats;
         },
 
+        getCurrentCat: function () {
+            return model.currentCat;
+        },
+
         setCurrentCat: function (cat) {
             model.currentCat = cat;
+
+            catView.render();
+        },
+
+        icrementCounter: function () {
+            model.currentCat.clickCount++;
+
+            catView.render();
         },
 
         init: function () {
-            currentCat = model.cats[0],
-
+            model.currentCat = model.cats[0];
             catListView.init();
+            catView.init();
+        }
+    }
+
+    const catView = {
+        init: function () {
+            this.catNameElem = document.getElementById('cat_name');
+            this.catImgElem = document.getElementById('cat_img');
+            this.catCounter = document.getElementById('cat_click-counter');
+
+            this.catImgElem.addEventListener('click', function () {
+                octopus.icrementCounter();
+
+            });
+
+            this.render();
+        },
+
+        render: function () {
+            const currentCat = octopus.getCurrentCat();
+
+            this.catNameElem.textContent = currentCat.name;
+            this.catImgElem.src = currentCat.imgSrc;
+            this.catCounter.textContent = currentCat.clickCount;
         }
     }
 
@@ -30,7 +65,6 @@
             this.catsList = document.querySelector('#cats_list');
 
             this.render();
-            console.log(this);
         },
 
         render: function () {
@@ -47,7 +81,7 @@
 
                 catElem.addEventListener('click', function () {
                     octopus.setCurrentCat(cat);
-                });  
+                });
             }
 
             this.catsList.appendChild(elem);
