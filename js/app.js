@@ -65,6 +65,7 @@
             this.catImgElem = document.getElementById('cat_img');
             this.catCounter = document.getElementById('cat_click-counter');
 
+            // increment click counter
             this.catImgElem.addEventListener('click', function () {
                 octopus.icrementCounter();
             });
@@ -93,6 +94,7 @@
             const elem = document.createDocumentFragment();
             this.catsList.innerHTML = '';
 
+            // add cats to list
             for (let i = 0; i < cats.length; i++) {
                 const cat = cats[i],
                     catElem = document.createElement('li');
@@ -125,6 +127,7 @@
         render: function () {
             const me = this;
 
+            // display admin area
             this.adminBtn.addEventListener('click', function () {
                 const isAdminAreaHidden = octopus.getAdminAreaHidden();
 
@@ -134,6 +137,7 @@
                 }
             });
 
+            // cancel and hide admin area
             this.cancelBtn.addEventListener('click', function () {
                 const isAdminAreaHidden = octopus.getAdminAreaHidden();
 
@@ -142,6 +146,7 @@
                 }
             });
 
+            // submit changes
             this.adminForm.addEventListener('submit', function (e) {
                 const catName = me.nameInput.value;
                 const imgUrl = me.imgInput.value;
@@ -167,6 +172,7 @@
             });
         },
 
+        //hide admin area and reset inputs value
         hideAdminArea: function () {
             this.adminForm.classList.add('hidden');
             octopus.setAdminAreaHidden(true);
